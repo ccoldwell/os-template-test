@@ -1,3 +1,4 @@
 FROM debian:testing
 
-CMD ["/bin/bash"]
+ADD rootfs.tar.xz
+CMD ["/sbin/init"]
