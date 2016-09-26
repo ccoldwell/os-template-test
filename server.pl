@@ -19,7 +19,7 @@ sub parse_form {
 
 # Setup and create socket
 
-my $port = shift || 8765;
+my $port = shift || 3838;
 defined($port) or die "Usage: $0 portno\n";
 
 my $DOCUMENT_ROOT = '/'; #$ENV{'HOME'} . "/public_html";

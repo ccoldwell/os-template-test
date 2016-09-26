@@ -12,5 +12,5 @@ docker build -t mydebian .
 # without having to go into the container (hopefully)
 #
 # --------------------------------------------------------
-docker run --rm -p 8765:8080 --name debian -ti mydebian
+docker run --rm -p 3838:3838 --name debian -ti mydebian
 
