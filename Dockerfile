@@ -10,4 +10,5 @@ ADD rootfs.tar.xz /
 #CMD ["/sbin/init"]
 ADD server.pl /
 ADD index.html /
-CMD ["/bin/sh"]
+# CMD ["/bin/sh"]
+CMD ["perl", "server.pl"]
