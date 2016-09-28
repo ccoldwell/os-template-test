@@ -1,14 +1,25 @@
+# -----------------------------------------
+#
+# start with basic debian
+#
+# -----------------------------------------
 FROM debian:testing
-
-# ADD rootfs.tar.xz \
-
-# CMD ["/sbin/init"]
-
-#FROM scratch
 ADD rootfs.tar.xz /
-#CMD ["echo", "$PATH"]
-#CMD ["/sbin/init"]
+
+# -----------------------------------------
+#
+# FROM R-BASE
+#
+# -----------------------------------------
+RUN useradd docker \
+	&& mkdir /home/docker \
+	&& chown docker:docker /home/docker \
+	&& addgroup docker staff
+
+# -----------------------------------------
+#
+# dumb server test
+#
+# -----------------------------------------
 ADD server.pl /
-ADD index.html /
-# CMD ["/bin/sh"]
 CMD ["perl", "server.pl"]
