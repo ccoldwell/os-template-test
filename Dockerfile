@@ -16,6 +16,16 @@ RUN useradd docker \
 	&& chown docker:docker /home/docker \
 	&& addgroup docker staff
 
+RUN apt-get update \
+	&& apt-get install -y --no-install-recommends \
+		ed \
+		less \
+		locales \
+		vim-tiny \
+		wget \
+		ca-certificates \
+	&& rm -rf /var/lib/apt/lists/*
+
 # -----------------------------------------
 #
 # dumb server test
