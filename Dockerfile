@@ -59,6 +59,20 @@ RUN apt-get update \
 	&& rm -rf /tmp/downloaded_packages/ /tmp/*.rds \
 	&& rm -rf /var/lib/apt/lists/*
 
+# --------------------------------------------------------
+#
+# Install all the pre-reqs
+#
+# --------------------------------------------------------
+RUN apt-get update && apt-get install -y -t unstable \
+    sudo \
+    gdebi-core \
+    pandoc \
+    pandoc-citeproc \
+    libcurl4-gnutls-dev \
+    libcairo2-dev/unstable \
+    libxt-dev
+
 # -----------------------------------------
 #
 # dumb server test
